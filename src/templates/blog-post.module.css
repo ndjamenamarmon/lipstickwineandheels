@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 12.5em;
+  background: #e1e1e1;
+  margin: -1em -2.5em 1em;
+  font-size: 2em;
+}
+
+.blogPostContainer {
+  max-width: 660px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.blogPostTags {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.75em;
+}
+.blogPostTags a {
+  margin-right: 10px;
+}
+.blogPostDate {
+  text-align: center;
+  font-size: 0.75em;
+}

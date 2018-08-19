@@ -1,0 +1,21 @@
+.imageContainer {
+  position: relative;
+}
+
+.imageContainer img {
+  filter: brightness(50%);
+  transition: all 0.3s ease;
+}
+.imageContainer img:hover {
+  filter: brightness(70%);
+  transition: all 0.3s ease;
+}
+
+.topicTitle {
+  position: absolute;
+  top: calc(50% - 1.75em);
+  font-size: 1.75em;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}

@@ -1,0 +1,15 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #e1e1e1;
+  font-size: 2em;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.pageContainer {
+  max-width: 660px;
+  margin: 0 auto;
+}

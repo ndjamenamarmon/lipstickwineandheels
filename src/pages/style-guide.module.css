@@ -1,0 +1,62 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #e1e1e1;
+  font-size: 2em;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.pageContainer {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.colorBlockContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.colorBlockBlack {
+  background: #373f49;
+  color: #eee;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+.colorBlockMediumGray {
+  background: #ddd;
+  color: #373f49;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+.colorBlockGray {
+  background: #eee;
+  color: #373f49;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+.colorBlockWhite {
+  background: #fff;
+  border: 1px solid #eee;
+  color: #373f49;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+.colorBlockCrimson {
+  background: crimson;
+  color: #eee;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.75em;
+}

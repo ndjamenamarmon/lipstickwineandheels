@@ -1,0 +1,18 @@
+.footerContainer {
+  background: #373f49;
+  color: #eee;
+  padding: 30px;
+  font-size: 0.75em;
+}
+
+.footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footerBuilt {
+  font-size: 0.8em;
+  margin-top: 30px;
+  font-style: italic;
+}
