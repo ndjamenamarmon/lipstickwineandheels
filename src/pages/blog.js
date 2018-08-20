@@ -13,7 +13,9 @@ class BlogIndex extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <div className={styles.hero}>Blog</div>
+        <div className={styles.heroContainer}>
+          <div className={styles.hero}>Blog</div>
+        </div>
         <div className="wrapper">
           <ul className="article-list">
             {posts.map(({ node }) => {

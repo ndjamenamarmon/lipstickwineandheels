@@ -15,8 +15,10 @@ class TagTemplate extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <div className={styles.hero} style={imageStyles} />
-        <div className="wrapper">
+        <div className={styles.heroContainer}>
+          <div className={styles.hero} style={imageStyles} />
+        </div>
+        <div className={styles.tagContainer}>
           <h2 className="section-headline">Recent articles in {tag.title}</h2>
           <ul className="article-list">
             {posts.map(({ node }) => {
@@ -35,11 +37,6 @@ class TagTemplate extends React.Component {
                   )
                 }
               }
-              //   return (
-              //     <li key={node.slug}>
-              //       <ArticlePreview article={node} />
-              //     </li>
-              //   )
             })}
           </ul>
         </div>

@@ -1,12 +1,17 @@
 .navigationContainer {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   margin: 0 auto;
   background: #fff;
   border-bottom: 1px solid #eee;
   width: 100%;
   position: fixed;
   z-index: 1;
+}
+@media (min-width: 768px) {
+  .navigationContainer {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .navigation {
@@ -16,8 +21,8 @@
   padding: 0;
   margin: 0;
   height: 50px;
-  /* max-height: 100px; */
   font-size: 1em;
+  width: 100%;
 }
 
 .navigationItem {
@@ -39,9 +44,21 @@
 .navigationLogo {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Dancing Script', 'Crimson Text';
   font-size: 1.25em;
-  margin: 0 1em;
+  margin: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .navigationLogo {
+    justify-content: left;
+    margin: 0 1em;
+  }
+}
+.navigationLogo a {
+  border-bottom: 0;
 }
 
 @media (min-width: 1024px) {

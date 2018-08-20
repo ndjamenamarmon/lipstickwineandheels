@@ -11,8 +11,7 @@ export default ({ article }) => (
     </div>
     <div className={styles.contentContainer}>
       <h3 className={styles.previewTitle}>
-        {/* <Link to={`/blog/${article.slug}`}>{article.title}</Link> */}
-        {article.title}
+        <Link to={`/blog/${article.slug}`}>{article.title}</Link>
       </h3>
       {article.tags && (
         <p className={styles.tag}>

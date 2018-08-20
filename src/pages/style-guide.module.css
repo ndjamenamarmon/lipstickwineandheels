@@ -1,3 +1,13 @@
+.heroContainer {
+  padding-top: 97px;
+}
+
+@media (min-width: 768px) {
+  .heroContainer {
+    padding-top: 50px;
+  }
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -6,18 +16,27 @@
   background: #e1e1e1;
   font-size: 2em;
   overflow: hidden;
-  padding-top: 50px;
 }
 
 .pageContainer {
   max-width: 660px;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 768px) {
+  padding: 0;
 }
 
 .colorBlockContainer {
-  display: flex;
-  justify-content: space-between;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: 100%;
+}
+@media (min-width: 768px) {
+  .colorBlockContainer {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+  }
 }
 
 .colorBlockBlack {

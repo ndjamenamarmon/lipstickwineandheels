@@ -16,7 +16,9 @@ class PageTemplate extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <div className={styles.hero} style={imageStyles} />
+        <div className={styles.heroContainer}>
+          <div className={styles.hero} style={imageStyles} />
+        </div>
         <div className={styles.pageContainer}>
           <h1 className="section-headline">{page.title}</h1>
           <div

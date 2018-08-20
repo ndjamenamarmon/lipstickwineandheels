@@ -1,3 +1,13 @@
+.heroContainer {
+  padding-top: 97px;
+}
+
+@media (min-width: 768px) {
+  .heroContainer {
+    padding-top: 50px;
+  }
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -6,5 +16,4 @@
   background: #e1e1e1;
   font-size: 2em;
   overflow: hidden;
-  padding-top: 50px;
 }

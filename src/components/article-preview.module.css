@@ -1,5 +1,12 @@
 .previewTitle {
   font-size: 1.5em;
+  margin-top: 0;
+}
+@media (min-width: 1280px) {
+  margin-top: 30px;
+}
+.previewTitle a {
+  border-bottom: 0;
 }
 
 .tag {
