@@ -12,7 +12,12 @@
   background-color: #e1e1e1;
   overflow: hidden;
   background-position: center;
-  background-size: 100%;
+  background-size: auto 200px;
+}
+@media (min-width: 1100px) {
+  .hero {
+    background-size: 100% auto;
+  }
 }
 
 .tagContainer {
