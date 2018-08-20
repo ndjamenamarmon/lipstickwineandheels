@@ -35,6 +35,8 @@
   position: absolute;
   top: -22px;
   left: calc(50% - 100px);
+  width: 170px;
+  text-align: center;
 }
 
 /* .preview {

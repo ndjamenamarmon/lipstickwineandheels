@@ -6,6 +6,7 @@ import Link from 'gatsby-link'
 
 import heroStyles from '../components/hero.module.css'
 import styles from './blog-post.module.css'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,42 +15,47 @@ class BlogPostTemplate extends React.Component {
     console.log(post)
 
     return (
-      <div style={{ background: '#fff' }} className={styles.blogPostContainer}>
-        <Helmet title={`${post.title} | ${siteTitle}`}>
-          <html lang="en" />
-        </Helmet>
-        <div className="wrapper">
-          <h1 className="section-headline">{post.title}</h1>
-          {post.tags && (
-            <p className={styles.blogPostTags}>
-              {post.tags.map(tag => (
-                <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  {tag.title}
-                </Link>
-              ))}
+      <PageTransition>
+        <div
+          style={{ background: '#fff' }}
+          className={styles.blogPostContainer}
+        >
+          <Helmet title={`${post.title} | ${siteTitle}`}>
+            <html lang="en" />
+          </Helmet>
+          <div className="wrapper">
+            <h1 className="section-headline">{post.title}</h1>
+            {post.tags && (
+              <p className={styles.blogPostTags}>
+                {post.tags.map(tag => (
+                  <Link to={`/tag/${tag.slug}`} key={tag.slug}>
+                    {tag.title}
+                  </Link>
+                ))}
+              </p>
+            )}
+            <p style={{ display: 'block' }} className={styles.blogPostDate}>
+              {post.date}
             </p>
-          )}
-          <p style={{ display: 'block' }} className={styles.blogPostDate}>
-            {post.date}
-          </p>
-        </div>
-        <div className={heroStyles.hero}>
-          {post.postImage && (
-            <Img
-              className={heroStyles.postImage}
-              alt={post.title}
-              sizes={post.postImage.sizes}
+          </div>
+          <div className={heroStyles.hero}>
+            {post.postImage && (
+              <Img
+                className={heroStyles.postImage}
+                alt={post.title}
+                sizes={post.postImage.sizes}
+              />
+            )}
+          </div>
+          <div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.postContent.childMarkdownRemark.html,
+              }}
             />
-          )}
+          </div>
         </div>
-        <div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.postContent.childMarkdownRemark.html,
-            }}
-          />
-        </div>
-      </div>
+      </PageTransition>
     )
   }
 }

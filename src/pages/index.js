@@ -5,6 +5,7 @@ import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 import TopicPreview from '../components/topic-preview'
 import { SocialIcon } from 'react-social-icons'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
 class RootIndex extends React.Component {
   render() {
@@ -20,44 +21,46 @@ class RootIndex extends React.Component {
     console.log(posts)
 
     return (
-      <div style={{ background: '#fff' }}>
-        <Helmet>
-          <title>{siteTitle}</title>
-          <meta name="description" content={siteDescription} />
-          <html lang="en" />
-        </Helmet>
-        {/* <Hero data={author.node} /> */}
-        <div className="wrapper">
-          <h1 className="section-headline">Recent Articles</h1>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
+      <PageTransition>
+        <div style={{ background: '#fff' }}>
+          <Helmet>
+            <title>{siteTitle}</title>
+            <meta name="description" content={siteDescription} />
+            <html lang="en" />
+          </Helmet>
+          {/* <Hero data={author.node} /> */}
+          <div className="wrapper">
+            <h1 className="section-headline">Recent Articles</h1>
+            <ul className="article-list">
+              {posts.map(({ node }) => {
+                return (
+                  <li key={node.slug}>
+                    <ArticlePreview article={node} />
+                  </li>
+                )
+              })}
+            </ul>
 
-          <h2 className="section-headline">Topics</h2>
-          <ul className="topic-list">
-            {tags.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <TopicPreview topic={node} />
-                </li>
-              )
-            })}
-          </ul>
+            <h2 className="section-headline">Topics</h2>
+            <ul className="topic-list">
+              {tags.map(({ node }) => {
+                return (
+                  <li key={node.slug}>
+                    <TopicPreview topic={node} />
+                  </li>
+                )
+              })}
+            </ul>
 
-          <h2 className="section-headline">Follow Me</h2>
-          <div className="social-icon-container">
-            <SocialIcon url="https://twitter.com/JamenaMcInteer" />
-            <SocialIcon url="https://www.instagram.com/jamena.mcinteer/" />
-            <SocialIcon url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/" />
+            <h2 className="section-headline">Follow Me</h2>
+            <div className="social-icon-container">
+              <SocialIcon url="https://twitter.com/JamenaMcInteer" />
+              <SocialIcon url="https://www.instagram.com/jamena.mcinteer/" />
+              <SocialIcon url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/" />
+            </div>
           </div>
         </div>
-      </div>
+      </PageTransition>
     )
   }
 }

@@ -42,5 +42,6 @@ module.exports = {
         fonts: ['Crimson Text', 'Dancing Script'],
       },
     },
+    'gatsby-plugin-page-transitions',
   ],
 }

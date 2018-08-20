@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styles from './tag.module.css'
 import ArticlePreview from '../components/article-preview'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
 class TagTemplate extends React.Component {
   render() {
@@ -13,36 +14,38 @@ class TagTemplate extends React.Component {
     const imageStyles = { backgroundImage: `url(${tag.image.sizes.src})` }
 
     return (
-      <div style={{ background: '#fff' }}>
-        <Helmet title={`${tag.title} | ${siteTitle}`}>
-          <html lang="en" />
-        </Helmet>
-        <div className={styles.heroContainer}>
-          <div className={styles.hero} style={imageStyles} />
-        </div>
-        <div className={styles.tagContainer}>
-          <h1 className="section-headline">Recent articles in {tag.title}</h1>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              {
-                let show = false
-                node.tags.map(tagItem => {
-                  if (tagItem.slug === tag.slug) {
-                    show = true
+      <PageTransition>
+        <div style={{ background: '#fff' }}>
+          <Helmet title={`${tag.title} | ${siteTitle}`}>
+            <html lang="en" />
+          </Helmet>
+          <div className={styles.heroContainer}>
+            <div className={styles.hero} style={imageStyles} />
+          </div>
+          <div className={styles.tagContainer}>
+            <h1 className="section-headline">Recent articles in {tag.title}</h1>
+            <ul className="article-list">
+              {posts.map(({ node }) => {
+                {
+                  let show = false
+                  node.tags.map(tagItem => {
+                    if (tagItem.slug === tag.slug) {
+                      show = true
+                    }
+                  })
+                  if (show === true) {
+                    return (
+                      <li key={node.slug}>
+                        <ArticlePreview article={node} />
+                      </li>
+                    )
                   }
-                })
-                if (show === true) {
-                  return (
-                    <li key={node.slug}>
-                      <ArticlePreview article={node} />
-                    </li>
-                  )
                 }
-              }
-            })}
-          </ul>
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
+      </PageTransition>
     )
   }
 }
