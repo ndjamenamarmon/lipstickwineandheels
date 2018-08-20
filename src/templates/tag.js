@@ -14,12 +14,14 @@ class TagTemplate extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={`${tag.title} | ${siteTitle}`} />
+        <Helmet title={`${tag.title} | ${siteTitle}`}>
+          <html lang="en" />
+        </Helmet>
         <div className={styles.heroContainer}>
           <div className={styles.hero} style={imageStyles} />
         </div>
         <div className={styles.tagContainer}>
-          <h2 className="section-headline">Recent articles in {tag.title}</h2>
+          <h1 className="section-headline">Recent articles in {tag.title}</h1>
           <ul className="article-list">
             {posts.map(({ node }) => {
               {

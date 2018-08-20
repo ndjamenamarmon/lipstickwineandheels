@@ -14,7 +14,7 @@
   align-items: center;
   height: 200px;
   background: #e1e1e1;
-  font-size: 2em;
+  text-transform: uppercase;
   overflow: hidden;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .colorBlockCrimson {
-  background: crimson;
+  background: #d51034;
   color: #eee;
   padding: 0 20px;
   text-align: center;

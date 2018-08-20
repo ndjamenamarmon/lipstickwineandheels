@@ -10,9 +10,13 @@ class StyleGuide extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={`Style Guide | ${siteTitle}`} />
+        <Helmet title={`Style Guide | ${siteTitle}`}>
+          <html lang="en" />
+        </Helmet>
         <div className={styles.heroContainer}>
-          <div className={styles.hero}>Style Guide</div>
+          <div className={styles.hero}>
+            <h1>Style Guide</h1>
+          </div>
         </div>
         {/* <div className="wrapper"> */}
         <div className={styles.pageContainer}>
@@ -51,10 +55,9 @@ class StyleGuide extends React.Component {
 
           <h1>Color</h1>
           <p>
-            There is <span style={{ color: 'crimson' }}>one accent color</span>,
+            There is <span style={{ color: '#D51034' }}>one accent color</span>,
             all other colors are monochromatic grays, except when depicting code
-            which may be in{' '}
-            <span style={{ color: 'cornflowerblue' }}>cornflower blue.</span>
+            which may be in <span style={{ color: '#0064ff' }}>blue.</span>
           </p>
           <div className={styles.colorBlockContainer}>
             <div className={styles.colorBlockBlack}>
@@ -91,7 +94,7 @@ class StyleGuide extends React.Component {
             </div>
             <div className={styles.colorBlockCrimson}>
               <p>
-                Background<br />crimson
+                Background<br />#D51034
               </p>
               <p>
                 Foreground<br />#EEE

@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import styles from './footer.module.css'
 
 export default () => (
-  <footer role="footer" className={styles.footerContainer}>
+  <footer className={styles.footerContainer}>
     <div className={styles.footerWrapper}>
       <p>
         <Link to="/style-guide/">Style Guide</Link>

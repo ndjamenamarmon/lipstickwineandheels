@@ -14,9 +14,12 @@ class BlogIndex extends React.Component {
       <div style={{ background: '#fff' }}>
         <Helmet>
           <title>Blog | {siteTitle}</title>
+          <html lang="en" />
         </Helmet>
         <div className={styles.heroContainer}>
-          <div className={styles.hero}>Blog</div>
+          <div className={styles.hero}>
+            <h1>Blog</h1>
+          </div>
         </div>
         <div className="wrapper">
           <ul className="article-list">

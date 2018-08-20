@@ -44,7 +44,7 @@ a {
   border-bottom: 0.05em solid #ddd;
 }
 a:hover {
-  color: crimson;
+  color: #d51034;
   border-bottom: 0;
 }
 
@@ -57,14 +57,14 @@ pre > code {
   color: #eee;
 }
 code {
-  /* color: #0064ff; */
-  color: cornflowerblue;
+  color: #0064ff;
+  /* color: cornflowerblue; */
 }
 
 button,
 .button {
-  background: crimson;
-  border: 1px solid crimson;
+  background: #d51034;
+  border: 1px solid #d51034;
   border: 0;
   padding: 10px 15px;
   font-size: 0.75em;
@@ -78,8 +78,8 @@ button,
 button:hover,
 .button:hover {
   background: #fff;
-  border: 1px solid crimson;
-  color: crimson;
+  border: 1px solid #d51034;
+  color: #d51034;
   transition: all 0.3s ease-in;
 }
 .button-muted {

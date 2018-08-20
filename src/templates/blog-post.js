@@ -15,7 +15,9 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div style={{ background: '#fff' }} className={styles.blogPostContainer}>
-        <Helmet title={`${post.title} | ${siteTitle}`} />
+        <Helmet title={`${post.title} | ${siteTitle}`}>
+          <html lang="en" />
+        </Helmet>
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
           {post.tags && (

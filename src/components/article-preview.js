@@ -10,9 +10,9 @@ export default ({ article }) => (
       {article.postImage && <Img alt="" sizes={article.postImage.sizes} />}
     </div>
     <div className={styles.contentContainer}>
-      <h3 className={styles.previewTitle}>
+      <h2 className={styles.previewTitle}>
         <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-      </h3>
+      </h2>
       {article.tags && (
         <p className={styles.tag}>
           {article.tags.map(tag => (

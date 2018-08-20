@@ -25,6 +25,7 @@ module.exports = {
     title: 'Lipstick, Wine, and Heels',
     description:
       'Lipstick, Wine, and Heels is a lifestyle blog dedicated to chic living and nerdy topics. I am a woman in tech who appreciates fashion, fine food and drink, crafty hobbies, fitness, and cats.',
+    siteUrl: 'https://lipstickwineandheels.com',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
