@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 import TopicPreview from '../components/topic-preview'
+import { SocialIcon } from 'react-social-icons'
 
 class RootIndex extends React.Component {
   render() {
@@ -48,6 +49,13 @@ class RootIndex extends React.Component {
               )
             })}
           </ul>
+
+          <h2 className="section-headline">Follow Me</h2>
+          <div className="social-icon-container">
+            <SocialIcon url="https://twitter.com/JamenaMcInteer" />
+            <SocialIcon url="https://www.instagram.com/jamena.mcinteer/" />
+            <SocialIcon url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/" />
+          </div>
         </div>
       </div>
     )

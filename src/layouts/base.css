@@ -228,3 +228,11 @@ button:hover,
 .list-inline li {
   display: inline-block;
 }
+
+.social-icon-container {
+  text-align: center;
+}
+.social-icon {
+  border: 0;
+  margin: 0 10px;
+}
