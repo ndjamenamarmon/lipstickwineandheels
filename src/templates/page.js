@@ -15,7 +15,7 @@ class PageTemplate extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet title={`${page.title} | ${siteTitle}`} />
         <div className={styles.heroContainer}>
           <div className={styles.hero} style={imageStyles} />
         </div>
@@ -44,16 +44,17 @@ export const pageQuery = graphql`
           html
         }
       }
+
       pageImage {
         sizes(maxWidth: 1920, maxHeight: 250, resizingBehavior: CROP) {
           ...GatsbyContentfulSizes
         }
       }
     }
+    site {
+      siteMetadata {
+        title
+      }
+    }
   }
 `
-// pageImage {
-//         sizes(maxWidth: 1920, resizingBehavior: SCALE) {
-//           ...GatsbyContentfulSizes_tracedSVG
-//         }
-//       }

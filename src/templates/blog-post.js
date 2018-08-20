@@ -74,6 +74,11 @@ export const pageQuery = graphql`
         slug
       }
     }
+    site {
+      siteMetadata {
+        title
+      }
+    }
   }
 `
 

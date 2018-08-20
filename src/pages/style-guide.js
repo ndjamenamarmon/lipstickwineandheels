@@ -10,7 +10,7 @@ class StyleGuide extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet title={`Style Guide | ${siteTitle}`} />
         <div className={styles.heroContainer}>
           <div className={styles.hero}>Style Guide</div>
         </div>
@@ -110,9 +110,19 @@ class StyleGuide extends React.Component {
           </p>
         </div>
       </div>
-      // </div>
     )
+    // </div>
   }
 }
 
 export default StyleGuide
+
+export const pageQuery = graphql`
+  query StyleGuideQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

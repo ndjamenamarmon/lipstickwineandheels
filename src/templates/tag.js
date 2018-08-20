@@ -14,7 +14,7 @@ class TagTemplate extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet title={`${tag.title} | ${siteTitle}`} />
         <div className={styles.heroContainer}>
           <div className={styles.hero} style={imageStyles} />
         </div>
@@ -56,6 +56,11 @@ export const pageQuery = graphql`
         sizes(maxWidth: 1920, maxHeight: 250, resizingBehavior: CROP) {
           ...GatsbyContentfulSizes
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
     allContentfulBlog(sort: { fields: [date], order: DESC }) {

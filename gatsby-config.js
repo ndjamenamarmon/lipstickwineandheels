@@ -8,7 +8,8 @@ try {
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  accessToken:
+    process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
 }
 
 const { spaceId, accessToken } = contentfulConfig
@@ -20,6 +21,11 @@ if (!spaceId || !accessToken) {
 }
 
 module.exports = {
+  siteMetadata: {
+    title: 'Lipstick, Wine, and Heels',
+    description:
+      'Lipstick, Wine, and Heels is a lifestyle blog dedicated to chic living and nerdy topics. I am a woman in tech who appreciates fashion, fine food and drink, crafty hobbies, fitness, and cats.',
+  },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     'gatsby-transformer-remark',
@@ -32,11 +38,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          'Crimson Text',
-          'Dancing Script'
-        ]
-      }
-    }
+        fonts: ['Crimson Text', 'Dancing Script'],
+      },
+    },
   ],
 }

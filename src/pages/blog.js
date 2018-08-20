@@ -12,7 +12,9 @@ class BlogIndex extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet>
+          <title>Blog | {siteTitle}</title>
+        </Helmet>
         <div className={styles.heroContainer}>
           <div className={styles.hero}>Blog</div>
         </div>
@@ -36,6 +38,11 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allContentfulBlog(sort: { fields: [date], order: DESC }) {
       edges {
         node {

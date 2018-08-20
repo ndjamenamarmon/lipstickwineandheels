@@ -13,6 +13,7 @@
   background-color: #e1e1e1;
   overflow: hidden;
   background-position: center;
+  background-size: 100%;
 }
 
 .pageContainer {

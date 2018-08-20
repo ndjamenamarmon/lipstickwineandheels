@@ -8,6 +8,10 @@ import TopicPreview from '../components/topic-preview'
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteDescription = get(
+      this,
+      'props.data.site.siteMetadata.description'
+    )
     const posts = get(this, 'props.data.allContentfulBlog.edges')
     // const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const tags = get(this, 'props.data.allContentfulTag.edges')
@@ -16,7 +20,10 @@ class RootIndex extends React.Component {
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet>
+          <title>{siteTitle}</title>
+          <meta name="description" content={siteDescription} />
+        </Helmet>
         {/* <Hero data={author.node} /> */}
         <div className="wrapper">
           <ul className="article-list">
@@ -49,6 +56,12 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query pageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     allContentfulBlog(sort: { fields: [date], order: DESC }) {
       edges {
         node {
