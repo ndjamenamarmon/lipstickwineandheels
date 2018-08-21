@@ -26,11 +26,13 @@ class BlogIndex extends React.Component {
           <div className="wrapper">
             <ul className="article-list">
               {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
+                if (new Date() >= new Date(node.date)) {
+                  return (
+                    <li key={node.slug}>
+                      <ArticlePreview article={node} />
+                    </li>
+                  )
+                }
               })}
             </ul>
           </div>
@@ -58,7 +60,7 @@ export const pageQuery = graphql`
             title
             slug
           }
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMMM D, YYYY")
           postContent {
             childMarkdownRemark {
               html

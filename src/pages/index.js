@@ -33,11 +33,14 @@ class RootIndex extends React.Component {
             <h1 className="section-headline">Recent Articles</h1>
             <ul className="article-list">
               {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
+                // console.log(new Date() >= new Date(node.date))
+                if (new Date() >= new Date(node.date)) {
+                  return (
+                    <li key={node.slug}>
+                      <ArticlePreview article={node} />
+                    </li>
+                  )
+                }
               })}
             </ul>
 
@@ -84,7 +87,7 @@ export const pageQuery = graphql`
             title
             slug
           }
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMMM D, YYYY")
           postContent {
             childMarkdownRemark {
               html

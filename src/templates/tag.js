@@ -33,7 +33,7 @@ class TagTemplate extends React.Component {
                       show = true
                     }
                   })
-                  if (show === true) {
+                  if (show === true && new Date() >= new Date(node.date)) {
                     return (
                       <li key={node.slug}>
                         <ArticlePreview article={node} />
@@ -77,7 +77,7 @@ export const pageQuery = graphql`
             title
             slug
           }
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMMM D, YYYY")
           postContent {
             childMarkdownRemark {
               html

@@ -68,7 +68,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       title
-      date(formatString: "MMMM Do, YYYY")
+      date(formatString: "MMMM D, YYYY")
       postContent {
         childMarkdownRemark {
           html
