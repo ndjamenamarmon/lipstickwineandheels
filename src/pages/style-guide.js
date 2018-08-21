@@ -54,6 +54,15 @@ class StyleGuide extends React.Component {
               multiple lines so you can see the line-height.
             </p>
 
+            <h1>Blockquote</h1>
+            <blockquote>
+              <p>
+                An example paragraph with <strong>strong text</strong>,{' '}
+                <em>emphasized text</em> and <a href="#">a link</a>, spanning
+                multiple lines so you can see the line-height.
+              </p>
+            </blockquote>
+
             <h1>Color</h1>
             <p>
               There is{' '}

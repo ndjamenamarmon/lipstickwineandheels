@@ -61,6 +61,13 @@ code {
   /* color: cornflowerblue; */
 }
 
+blockquote {
+  border-left: 2px solid #ddd;
+  margin-left: 0;
+  padding-left: 40px;
+  font-style: italic;
+}
+
 button,
 .button {
   background: #d51034;
