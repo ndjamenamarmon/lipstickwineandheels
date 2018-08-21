@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import readingTime from 'reading-time'
 
 import styles from './article-preview.module.css'
 
@@ -22,7 +23,10 @@ export default ({ article }) => (
           ))}
         </p>
       )}
-      <small>{article.date}</small>
+      <small>
+        {article.date} <span className={styles.bullet}>&bull;</span>
+        {readingTime(article.postContent.childMarkdownRemark.html).text}
+      </small>
       {article.description && (
         <div
           className="article-preview-description"

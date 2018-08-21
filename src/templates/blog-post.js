@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import readingTime from 'reading-time'
 
 import heroStyles from '../components/hero.module.css'
 import styles from './blog-post.module.css'
@@ -12,7 +13,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlog')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    console.log(post)
+    // console.log(post)
 
     return (
       <PageTransition>
@@ -35,7 +36,8 @@ class BlogPostTemplate extends React.Component {
               </p>
             )}
             <p style={{ display: 'block' }} className={styles.blogPostDate}>
-              {post.date}
+              {post.date} <span className={styles.bullet}>&bull;</span>
+              {readingTime(post.postContent.childMarkdownRemark.html).text}
             </p>
           </div>
           <div className={heroStyles.hero}>
