@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import readingTime from 'reading-time'
+import { DiscussionEmbed } from 'disqus-react'
 
 import heroStyles from '../components/hero.module.css'
 import styles from './blog-post.module.css'
@@ -14,6 +15,11 @@ class BlogPostTemplate extends React.Component {
     const post = get(this.props, 'data.contentfulBlog')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     // console.log(post)
+    const disqusShortname = 'webdevabq'
+    const disqusConfig = {
+      identifier: post.slug,
+      title: post.title,
+    }
 
     return (
       <PageTransition>
@@ -54,6 +60,15 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{
                 __html: post.postContent.childMarkdownRemark.html,
               }}
+            />
+          </div>
+
+          <div className={styles.commentsContainer}>
+            <h2>Comments</h2>
+            <p>I'd love to hear from you, let me know your thoughts!</p>
+            <DiscussionEmbed
+              shortname={disqusShortname}
+              config={disqusConfig}
             />
           </div>
         </div>

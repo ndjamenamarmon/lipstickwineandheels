@@ -18,7 +18,7 @@ class RootIndex extends React.Component {
     // const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const tags = get(this, 'props.data.allContentfulTag.edges')
 
-    console.log(posts)
+    // console.log(posts)
 
     return (
       <PageTransition>
