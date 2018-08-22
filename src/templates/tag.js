@@ -16,6 +16,7 @@ class TagTemplate extends React.Component {
     const tag = get(this.props, 'data.contentfulTag')
     const posts = get(this.props, 'data.allContentfulBlog.edges')
     const imageStyles = { backgroundImage: `url(${tag.image.sizes.src})` }
+    let count = 0
 
     return (
       <PageTransition>
@@ -39,6 +40,7 @@ class TagTemplate extends React.Component {
                     }
                   })
                   if (show === true && new Date() >= new Date(node.date)) {
+                    count++
                     return (
                       <li key={node.slug}>
                         <ArticlePreview article={node} />
@@ -48,6 +50,11 @@ class TagTemplate extends React.Component {
                 }
               })}
             </ul>
+            {count === 0 && (
+              <p className={styles.noPosts}>
+                There are no blog posts in this topic yet.
+              </p>
+            )}
           </div>
         </div>
       </PageTransition>
