@@ -23,9 +23,9 @@ class RootIndex extends React.Component {
       <PageTransition>
         <div style={{ background: '#fff' }}>
           <Helmet>
+            <html lang="en" />
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
-            <html lang="en" />
           </Helmet>
           <div className="wrapper">
             <h1 className="section-headline">Recent Articles</h1>

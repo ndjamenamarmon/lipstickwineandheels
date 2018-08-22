@@ -30,6 +30,7 @@ class BlogPostTemplate extends React.Component {
         >
           <Helmet title={`${post.title} | ${siteTitle}`}>
             <html lang="en" />
+            <meta name="description" content={post.description} />
             <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b7d418b3280b10011e38527&product=inline-share-buttons" />
           </Helmet>
           <div className="wrapper">
@@ -89,6 +90,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       title
+      slug
       date(formatString: "MMMM D, YYYY")
       postContent {
         childMarkdownRemark {

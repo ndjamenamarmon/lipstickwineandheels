@@ -15,8 +15,9 @@ class BlogIndex extends React.Component {
       <PageTransition>
         <div style={{ background: '#fff' }}>
           <Helmet>
-            <title>Blog | {siteTitle}</title>
             <html lang="en" />
+            <title>Blog | {siteTitle}</title>
+            <meta name="description" content={siteDescription} />
           </Helmet>
           <div className={styles.heroContainer}>
             <div className={styles.hero}>

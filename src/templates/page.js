@@ -19,6 +19,7 @@ class PageTemplate extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={`${page.title} | ${siteTitle}`}>
             <html lang="en" />
+            <meta name="description" content={page.metaDescription} />
           </Helmet>
           <div className={styles.heroContainer}>
             <div className={styles.hero} style={imageStyles} />
@@ -49,7 +50,7 @@ export const pageQuery = graphql`
           html
         }
       }
-
+      metaDescription
       pageImage {
         sizes(maxWidth: 1920, maxHeight: 250, resizingBehavior: CROP) {
           ...GatsbyContentfulSizes
