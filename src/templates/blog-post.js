@@ -21,6 +21,8 @@ class BlogPostTemplate extends React.Component {
       title: post.title,
     }
 
+    console.log(post)
+
     return (
       <PageTransition>
         <div
@@ -48,11 +50,16 @@ class BlogPostTemplate extends React.Component {
           </div>
           <div className={heroStyles.hero}>
             {post.postImage && (
-              <Img
-                className={heroStyles.postImage}
-                alt={post.title}
-                sizes={post.postImage.sizes}
-              />
+              <figure>
+                <Img
+                  className={heroStyles.postImage}
+                  alt={post.postImage.title}
+                  sizes={post.postImage.sizes}
+                />
+                {post.postImage.description && (
+                  <figcaption>{post.postImage.description}</figcaption>
+                )}
+              </figure>
             )}
           </div>
           <div>
@@ -93,6 +100,8 @@ export const pageQuery = graphql`
         sizes(maxWidth: 660, resizingBehavior: SCALE) {
           ...GatsbyContentfulSizes
         }
+        title
+        description
       }
       tags {
         title

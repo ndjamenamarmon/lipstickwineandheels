@@ -61,6 +61,7 @@ export const pageQuery = graphql`
         sizes(maxWidth: 1920, maxHeight: 250, resizingBehavior: CROP) {
           ...GatsbyContentfulSizes
         }
+        title
       }
     }
     site {

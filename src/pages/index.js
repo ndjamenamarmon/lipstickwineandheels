@@ -97,6 +97,7 @@ export const pageQuery = graphql`
             sizes(maxWidth: 1920, maxHeight: 1200, resizingBehavior: CROP) {
               ...GatsbyContentfulSizes
             }
+            title
           }
           description {
             childMarkdownRemark {
@@ -115,6 +116,7 @@ export const pageQuery = graphql`
             sizes(maxWidth: 300, maxHeight: 300, resizingBehavior: SCALE) {
               ...GatsbyContentfulSizes
             }
+            title
           }
         }
       }

@@ -28,11 +28,12 @@ class TagIndex extends React.Component {
           <div className="wrapper">
             <ul className="topic-list">
               {tags.map(({ node }) => {
-                console.log(node.slug)
                 return (
                   <li key={node.slug}>
                     <div className={styles.imageContainer}>
-                      {node.image && <Img alt="" sizes={node.image.sizes} />}
+                      {node.image && (
+                        <Img alt={node.image.title} sizes={node.image.sizes} />
+                      )}
                     </div>
                     <div className={styles.contentContainer}>
                       <h2 className={styles.previewTitle}>
@@ -68,6 +69,7 @@ export const pageQuery = graphql`
             sizes(maxWidth: 800, maxHeight: 800, resizingBehavior: CROP) {
               ...GatsbyContentfulSizes
             }
+            title
           }
         }
       }

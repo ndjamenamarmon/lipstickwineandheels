@@ -8,7 +8,9 @@ export default ({ topic }) => (
   <div className={styles.preview}>
     <div className={styles.imageContainer}>
       <Link to={`/tag/${topic.slug}`}>
-        {topic.image && <Img alt="" sizes={topic.image.sizes} />}
+        {topic.image && (
+          <Img alt={topic.image.title} sizes={topic.image.sizes} />
+        )}
         <h3 className={styles.topicTitle}>{topic.title}</h3>
       </Link>
     </div>

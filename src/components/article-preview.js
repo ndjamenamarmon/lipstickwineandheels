@@ -8,7 +8,9 @@ import styles from './article-preview.module.css'
 export default ({ article }) => (
   <div className={styles.preview}>
     <div className={styles.imageContainer}>
-      {article.postImage && <Img alt="" sizes={article.postImage.sizes} />}
+      {article.postImage && (
+        <Img alt={article.postImage.title} sizes={article.postImage.sizes} />
+      )}
     </div>
     <div className={styles.contentContainer}>
       <h2 className={styles.previewTitle}>
