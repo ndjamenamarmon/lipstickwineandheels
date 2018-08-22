@@ -30,6 +30,7 @@ class BlogPostTemplate extends React.Component {
         >
           <Helmet title={`${post.title} | ${siteTitle}`}>
             <html lang="en" />
+            <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b7d418b3280b10011e38527&product=inline-share-buttons" />
           </Helmet>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
@@ -66,6 +67,9 @@ class BlogPostTemplate extends React.Component {
           </div>
 
           <div className={styles.commentsContainer}>
+            <h2>Share</h2>
+            <p>Think others might enjoy this post? Share it!</p>
+            <div className="sharethis-inline-share-buttons" />
             <h2>Comments</h2>
             <p>I'd love to hear from you, let me know your thoughts!</p>
             <DiscussionEmbed
