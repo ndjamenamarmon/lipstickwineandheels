@@ -6,7 +6,6 @@ import Link from 'gatsby-link'
 import readingTime from 'reading-time'
 import { DiscussionEmbed } from 'disqus-react'
 
-import heroStyles from '../components/hero.module.css'
 import styles from './blog-post.module.css'
 import PageTransition from 'gatsby-plugin-page-transitions'
 
@@ -20,6 +19,8 @@ class BlogPostTemplate extends React.Component {
       identifier: post.slug,
       title: post.title,
     }
+
+    console.log(post)
 
     return (
       <PageTransition>
@@ -46,13 +47,14 @@ class BlogPostTemplate extends React.Component {
               {readingTime(post.postContent.childMarkdownRemark.html).text}
             </p>
           </div>
-          <div className={heroStyles.hero}>
+          <div>
             {post.postImage && (
-              <Img
-                className={heroStyles.postImage}
-                alt={post.title}
-                sizes={post.postImage.sizes}
-              />
+              <figure>
+                <Img alt={post.postImage.title} sizes={post.postImage.sizes} />
+                {post.postImage.description && (
+                  <figcaption>{post.postImage.description}</figcaption>
+                )}
+              </figure>
             )}
           </div>
           <div>
@@ -93,6 +95,8 @@ export const pageQuery = graphql`
         sizes(maxWidth: 660, resizingBehavior: SCALE) {
           ...GatsbyContentfulSizes
         }
+        title
+        description
       }
       tags {
         title

@@ -70,6 +70,7 @@ export const pageQuery = graphql`
             sizes(maxWidth: 1920, maxHeight: 1200, resizingBehavior: CROP) {
               ...GatsbyContentfulSizes
             }
+            title
           }
           description {
             childMarkdownRemark {
@@ -81,28 +82,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// export const pageQuery = graphql`
-//   query BlogIndexQuery {
-//     allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
-//       edges {
-//         node {
-//           title
-//           slug
-//           date(formatString: "MMMM Do, YYYY")
-//           tags
-//           heroImage {
-//             sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-//               ...GatsbyContentfulSizes_tracedSVG
-//             }
-//           }
-//           description {
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
