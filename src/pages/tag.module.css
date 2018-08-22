@@ -1,0 +1,19 @@
+.heroContainer {
+  padding-top: 97px;
+}
+
+@media (min-width: 768px) {
+  .heroContainer {
+    padding-top: 50px;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #e1e1e1;
+  text-transform: uppercase;
+  overflow: hidden;
+}
