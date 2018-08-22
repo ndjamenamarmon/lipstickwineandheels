@@ -9,9 +9,14 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 class TagTemplate extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteDescription = get(
+      this,
+      'props.data.site.siteMetadata.description'
+    )
     const tag = get(this.props, 'data.contentfulTag')
     const posts = get(this.props, 'data.allContentfulBlog.edges')
     const imageStyles = { backgroundImage: `url(${tag.image.sizes.src})` }
+    let count = 0
 
     return (
       <PageTransition>
@@ -35,6 +40,7 @@ class TagTemplate extends React.Component {
                     }
                   })
                   if (show === true && new Date() >= new Date(node.date)) {
+                    count++
                     return (
                       <li key={node.slug}>
                         <ArticlePreview article={node} />
@@ -44,6 +50,11 @@ class TagTemplate extends React.Component {
                 }
               })}
             </ul>
+            {count === 0 && (
+              <p className={styles.noPosts}>
+                There are no blog posts in this topic yet.
+              </p>
+            )}
           </div>
         </div>
       </PageTransition>
@@ -68,6 +79,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allContentfulBlog(sort: { fields: [date], order: DESC }) {

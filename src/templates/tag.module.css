@@ -30,3 +30,19 @@
     padding: 0;
   }
 }
+
+.noPosts {
+  max-width: 660px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .noPosts {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
