@@ -18,6 +18,7 @@ class TagTemplate extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={`${tag.title} | ${siteTitle}`}>
             <html lang="en" />
+            <meta name="description" content={siteDescription} />
           </Helmet>
           <div className={styles.heroContainer}>
             <div className={styles.hero} style={imageStyles} />
