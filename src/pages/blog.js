@@ -9,6 +9,10 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteDescription = get(
+      this,
+      'props.data.site.siteMetadata.description'
+    )
     const posts = get(this, 'props.data.allContentfulBlog.edges')
 
     return (
@@ -50,6 +54,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allContentfulBlog(sort: { fields: [date], order: DESC }) {
