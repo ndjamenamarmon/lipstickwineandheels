@@ -1,7 +1,6 @@
 import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 import TopicPreview from '../components/topic-preview'
 import { SocialIcon } from 'react-social-icons'
@@ -28,7 +27,6 @@ class RootIndex extends React.Component {
             <meta name="description" content={siteDescription} />
             <html lang="en" />
           </Helmet>
-          {/* <Hero data={author.node} /> */}
           <div className="wrapper">
             <h1 className="section-headline">Recent Articles</h1>
             <ul className="article-list">
