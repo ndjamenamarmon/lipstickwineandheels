@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render index page correctly 1`] = `
+<PageTransition>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+    >
+      <html
+        lang="en"
+      />
+      <title>
+        Lipstick, Wine, and Heels
+      </title>
+      <meta
+        content="Lipstick, Wine, and Heels is a lifestyle blog dedicated to chic living and nerdy topics. I am a woman in tech who appreciates fashion, fine food and drink, crafty hobbies, fitness, and cats."
+        name="description"
+      />
+    </HelmetWrapper>
+    <div
+      className="wrapper"
+    >
+      <h1
+        className="section-headline"
+      >
+        Recent Articles
+      </h1>
+      <ul
+        className="article-list"
+      >
+        <li
+          key="this-is-a-sample-blog-post"
+        >
+          <Component
+            article={
+              Object {
+                "date": "August 30, 2018",
+                "slug": "this-is-a-sample-blog-post",
+                "tags": Array [
+                  Object {
+                    "slug": "tech",
+                    "title": "Tech",
+                  },
+                ],
+                "title": "This is a sample blog post",
+              }
+            }
+          />
+        </li>
+        <li
+          key="hello-world"
+        >
+          <Component
+            article={
+              Object {
+                "date": "August 28, 2018",
+                "slug": "hello-world",
+                "tags": Array [
+                  Object {
+                    "slug": "tech",
+                    "title": "Tech",
+                  },
+                  Object {
+                    "slug": "travel",
+                    "title": "Travel",
+                  },
+                ],
+                "title": "Hello World!",
+              }
+            }
+          />
+        </li>
+      </ul>
+      <h2
+        className="section-headline"
+      >
+        Topics
+      </h2>
+      <ul
+        className="topic-list"
+      >
+        <li
+          key="tech"
+        >
+          <Component
+            topic={
+              Object {
+                "slug": "tech",
+                "title": "Tech",
+              }
+            }
+          />
+        </li>
+        <li
+          key="travel"
+        >
+          <Component
+            topic={
+              Object {
+                "slug": "travel",
+                "title": "Travel",
+              }
+            }
+          />
+        </li>
+      </ul>
+      <h2
+        className="section-headline"
+      >
+        Follow Me
+      </h2>
+      <div
+        className="social-icon-container"
+      >
+        <SocialIcon
+          url="https://twitter.com/JamenaMcInteer"
+        />
+        <SocialIcon
+          url="https://www.instagram.com/jamena.mcinteer/"
+        />
+        <SocialIcon
+          url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/"
+        />
+      </div>
+    </div>
+  </div>
+</PageTransition>
+`;

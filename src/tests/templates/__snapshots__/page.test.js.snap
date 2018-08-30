@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render page template correctly 1`] = `
+<PageTransition>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="About | Lipstick, Wine, and Heels"
+    >
+      <html
+        lang="en"
+      />
+      <meta
+        content="This page is all about me"
+        name="description"
+      />
+    </HelmetWrapper>
+    <div
+      className="heroContainer"
+    >
+      <div
+        className="hero"
+        style={
+          Object {
+            "backgroundImage": "url(/reference/to/some/image.jpg)",
+          }
+        }
+      />
+    </div>
+    <div
+      className="pageContainer"
+    >
+      <h1
+        className="section-headline"
+      >
+        About
+      </h1>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Learn all about me...</p>",
+          }
+        }
+      />
+    </div>
+  </div>
+</PageTransition>
+`;

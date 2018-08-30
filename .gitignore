@@ -67,3 +67,4 @@ public
 .contentful.json
 contentful-link-cleaner-config.json
 contentful/export.json
+coverage

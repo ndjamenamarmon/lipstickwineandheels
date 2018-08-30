@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render article preview component correctly 1`] = `
+<div
+  className="preview"
+>
+  <div
+    className="imageContainer"
+  >
+    <Image
+      Tag="div"
+      alt="this is the image title"
+      fadeIn={true}
+    />
+  </div>
+  <div
+    className="contentContainer"
+  >
+    <h2
+      className="previewTitle"
+    >
+      <GatsbyLink
+        to="/blog/this-is-a-sample-blog-post"
+      >
+        This is a sample blog post
+      </GatsbyLink>
+    </h2>
+    <p
+      className="tag"
+    >
+      <GatsbyLink
+        key="tech"
+        to="/tag/tech"
+      >
+        Tech
+      </GatsbyLink>
+    </p>
+    <small>
+      August 30, 2018
+       
+      <span
+        className="bullet"
+      >
+        •
+      </span>
+      1 min read
+    </small>
+    <p
+      className="articleReadMore"
+    >
+      <GatsbyLink
+        className="button button-secondary"
+        to="/blog/this-is-a-sample-blog-post"
+      >
+        Continue Reading
+      </GatsbyLink>
+    </p>
+  </div>
+</div>
+`;

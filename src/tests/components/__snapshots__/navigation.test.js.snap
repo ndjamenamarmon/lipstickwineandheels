@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render navigation component correctly 1`] = `
+<nav
+  className="navigationContainer"
+  role="navigation"
+>
+  <header
+    className="navigationLogo"
+  >
+    <GatsbyLink
+      to="/"
+    >
+      Lipstick, Wine, and Heels
+    </GatsbyLink>
+  </header>
+  <ul
+    className="navigation"
+  >
+    <li
+      className="navigationItem"
+    >
+      <GatsbyLink
+        to="/"
+      >
+        Home
+      </GatsbyLink>
+    </li>
+    <li
+      className="navigationItem"
+    >
+      <GatsbyLink
+        to="/page/about"
+      >
+        About
+      </GatsbyLink>
+    </li>
+    <li
+      className="navigationItem"
+    >
+      <GatsbyLink
+        to="/tag/"
+      >
+        Topics
+      </GatsbyLink>
+    </li>
+    <li
+      className="navigationItem"
+    >
+      <GatsbyLink
+        to="/blog/"
+      >
+        Blog
+      </GatsbyLink>
+    </li>
+  </ul>
+</nav>
+`;

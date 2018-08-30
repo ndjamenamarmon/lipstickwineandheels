@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 404 page correctly 1`] = `
+<PageTransition>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+    >
+      <html
+        lang="en"
+      />
+      <title />
+      <meta
+        name="description"
+      />
+    </HelmetWrapper>
+    <div
+      className="wrapper"
+    >
+      <div
+        className="page-container"
+      >
+        <h1
+          className="section-headline"
+        >
+          Page Not Found
+        </h1>
+        <p>
+          Looks like you've followed a broken link or entered a URL that doesn't exist on this site. Sorry about that! Try checking out
+           
+          <GatsbyLink
+            to="/blog/"
+          >
+            our blog
+          </GatsbyLink>
+           or
+           
+          <GatsbyLink
+            to="/"
+          >
+            homepage
+          </GatsbyLink>
+           instead.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageTransition>
+`;
