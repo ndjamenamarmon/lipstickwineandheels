@@ -43,10 +43,7 @@
     "yargs-parser": "^10.1.0"
   },
   "homepage": "https://github.com/ndjamenamarmon/lipstickwineandheels#readme",
-  "keywords": [
-    "gatsby",
-    "contentful"
-  ],
+  "keywords": ["gatsby", "contentful"],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -57,13 +54,18 @@
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "jest --config=jest.config.json",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
+    "test-coverage":
+      "jest --config=jest.config.json --coverage --collectCoverageFrom=src/**/*.js",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
+    "fix-semi":
+      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "heroku-postbuild": "gatsby build",
-    "cleanup-repository": "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf "
+    "cleanup-repository":
+      "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf "
   }
 }
