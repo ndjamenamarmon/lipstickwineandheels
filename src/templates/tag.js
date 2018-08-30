@@ -31,7 +31,7 @@ class TagTemplate extends React.Component {
           <div className={styles.tagContainer}>
             <h1 className="section-headline">Recent articles in {tag.title}</h1>
             <ul className="article-list">
-              {posts.map(({ node }) => {
+              {posts.map(node => {
                 {
                   let show = false
                   node.tags.map(tagItem => {

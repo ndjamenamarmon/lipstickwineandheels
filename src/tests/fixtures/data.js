@@ -14,16 +14,38 @@ export default {
           date: 'August 30, 2018',
           slug: 'this-is-a-sample-blog-post',
           title: 'This is a sample blog post',
+          tags: [
+            {
+              title: 'Tech',
+              slug: 'tech',
+            },
+          ],
         },
         {
           date: 'August 28, 2018',
           slug: 'hello-world',
           title: 'Hello World!',
+          tags: [
+            {
+              title: 'Tech',
+              slug: 'tech',
+            },
+            {
+              title: 'Travel',
+              slug: 'travel',
+            },
+          ],
         },
         {
           date: 'December 31, 2222',
           slug: 'this-is-a-published-post-in-the-future',
           title: 'This is a published post in the future',
+          tags: [
+            {
+              title: 'Travel',
+              slug: 'travel',
+            },
+          ],
         },
       ],
     },
@@ -58,6 +80,31 @@ export default {
           slug: 'tech',
         },
       ],
+    },
+    contentfulTag: {
+      title: 'Tech',
+      slug: 'tech',
+      image: {
+        sizes: {
+          src: '/reference/to/some/image.jpg',
+        },
+        title: 'this is the image title',
+      },
+    },
+    contentfulPage: {
+      title: 'About',
+      slug: 'slug',
+      pageContent: {
+        childMarkdownRemark: {
+          html: '<p>Learn all about me...</p>',
+        },
+      },
+      metaDescription: 'This page is all about me',
+      pageImage: {
+        sizes: {
+          src: '/reference/to/some/image.jpg',
+        },
+      },
     },
   },
 }

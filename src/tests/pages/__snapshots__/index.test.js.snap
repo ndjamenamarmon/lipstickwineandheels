@@ -43,6 +43,12 @@ exports[`should render index page correctly 1`] = `
               Object {
                 "date": "August 30, 2018",
                 "slug": "this-is-a-sample-blog-post",
+                "tags": Array [
+                  Object {
+                    "slug": "tech",
+                    "title": "Tech",
+                  },
+                ],
                 "title": "This is a sample blog post",
               }
             }
@@ -56,6 +62,16 @@ exports[`should render index page correctly 1`] = `
               Object {
                 "date": "August 28, 2018",
                 "slug": "hello-world",
+                "tags": Array [
+                  Object {
+                    "slug": "tech",
+                    "title": "Tech",
+                  },
+                  Object {
+                    "slug": "travel",
+                    "title": "Travel",
+                  },
+                ],
                 "title": "Hello World!",
               }
             }

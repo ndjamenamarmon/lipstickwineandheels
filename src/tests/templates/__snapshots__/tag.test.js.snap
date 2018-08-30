@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render blog page correctly 1`] = `
+exports[`should render tag template correctly 1`] = `
 <PageTransition>
   <div
     style={
@@ -12,14 +12,11 @@ exports[`should render blog page correctly 1`] = `
     <HelmetWrapper
       defer={true}
       encodeSpecialCharacters={true}
+      title="Tech | Lipstick, Wine, and Heels"
     >
       <html
         lang="en"
       />
-      <title>
-        Blog | 
-        Lipstick, Wine, and Heels
-      </title>
       <meta
         content="Lipstick, Wine, and Heels is a lifestyle blog dedicated to chic living and nerdy topics. I am a woman in tech who appreciates fashion, fine food and drink, crafty hobbies, fitness, and cats."
         name="description"
@@ -30,15 +27,22 @@ exports[`should render blog page correctly 1`] = `
     >
       <div
         className="hero"
-      >
-        <h1>
-          Blog
-        </h1>
-      </div>
+        style={
+          Object {
+            "backgroundImage": "url(/reference/to/some/image.jpg)",
+          }
+        }
+      />
     </div>
     <div
-      className="wrapper"
+      className="tagContainer"
     >
+      <h1
+        className="section-headline"
+      >
+        Recent articles in 
+        Tech
+      </h1>
       <ul
         className="article-list"
       >

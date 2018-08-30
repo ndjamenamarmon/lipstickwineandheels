@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render blog post template correctly 1`] = `
+<PageTransition>
+  <div
+    className="blogPostContainer"
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="This is a sample blog post | Lipstick, Wine, and Heels"
+    >
+      <html
+        lang="en"
+      />
+      <meta
+        name="description"
+      />
+      <script
+        src="//platform-api.sharethis.com/js/sharethis.js#property=5b7d418b3280b10011e38527&product=inline-share-buttons"
+      />
+    </HelmetWrapper>
+    <div
+      className="wrapper"
+    >
+      <h1
+        className="section-headline"
+      >
+        This is a sample blog post
+      </h1>
+      <p
+        className="blogPostTags"
+      >
+        <GatsbyLink
+          key="tech"
+          to="/tag/tech"
+        >
+          Tech
+        </GatsbyLink>
+      </p>
+      <p
+        className="blogPostDate"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      >
+        August 30, 2018
+         
+        <span
+          className="bullet"
+        >
+          •
+        </span>
+        1 min read
+      </p>
+    </div>
+    <div>
+      <figure>
+        <Image
+          Tag="div"
+          alt="this is the image title"
+          fadeIn={true}
+        />
+        <figcaption>
+          this is the image description
+        </figcaption>
+      </figure>
+    </div>
+    <div>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>This is the post content in html</p>",
+          }
+        }
+      />
+    </div>
+    <div
+      className="commentsContainer"
+    >
+      <h2>
+        Share
+      </h2>
+      <p>
+        Think others might enjoy this post? Share it!
+      </p>
+      <div
+        className="sharethis-inline-share-buttons"
+      />
+      <h2>
+        Comments
+      </h2>
+      <p>
+        I'd love to hear from you, let me know your thoughts!
+      </p>
+      <DiscussionEmbed
+        config={
+          Object {
+            "identifier": "this-is-a-sample-blog-post",
+            "title": "This is a sample blog post",
+          }
+        }
+        shortname="webdevabq"
+      />
+    </div>
+  </div>
+</PageTransition>
+`;
