@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render footer component correctly 1`] = `
+<footer
+  className="footerContainer"
+>
+  <div
+    className="footerWrapper"
+  >
+    <p>
+      <GatsbyLink
+        to="/page/style-guide/"
+      >
+        Style Guide
+      </GatsbyLink>
+    </p>
+    <p>
+      © 2018-2019. All Rights Reserved.
+    </p>
+    <p>
+      Made with ❤️ and ☕ in Austin, Texas.
+    </p>
+    <p
+      className="footerBuilt"
+    >
+      Built by Jamena McInteer using GatsbyJS, ReactJS, GraphQL, and Contentful
+    </p>
+  </div>
+</footer>
+`;
