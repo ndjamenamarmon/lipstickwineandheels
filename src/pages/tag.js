@@ -28,6 +28,7 @@ class TagIndex extends React.Component {
           <div className="wrapper">
             <ul className="topic-list">
               {tags.map(node => {
+                node = node.node ? node.node : node
                 return (
                   <li key={node.slug}>
                     <div className={styles.imageContainer}>

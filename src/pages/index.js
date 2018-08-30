@@ -31,6 +31,7 @@ class RootIndex extends React.Component {
             <h1 className="section-headline">Recent Articles</h1>
             <ul className="article-list">
               {posts.map(node => {
+                node = node.node ? node.node : node
                 // console.log(new Date() >= new Date(node.date))
                 if (new Date() >= new Date(node.date)) {
                   return (
@@ -45,6 +46,7 @@ class RootIndex extends React.Component {
             <h2 className="section-headline">Topics</h2>
             <ul className="topic-list">
               {tags.map(node => {
+                node = node.node ? node.node : node
                 return (
                   <li key={node.slug}>
                     <TopicPreview topic={node} />

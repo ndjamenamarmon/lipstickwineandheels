@@ -33,6 +33,7 @@ class TagTemplate extends React.Component {
             <ul className="article-list">
               {posts.map(node => {
                 {
+                  node = node.node ? node.node : node
                   let show = false
                   node.tags.map(tagItem => {
                     if (tagItem.slug === tag.slug) {
