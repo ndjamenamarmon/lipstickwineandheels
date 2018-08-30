@@ -30,7 +30,7 @@ class BlogIndex extends React.Component {
           </div>
           <div className="wrapper">
             <ul className="article-list">
-              {posts.map(({ node }) => {
+              {posts.map(node => {
                 if (new Date() >= new Date(node.date)) {
                   return (
                     <li key={node.slug}>

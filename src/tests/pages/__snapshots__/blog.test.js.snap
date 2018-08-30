@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render blog page correctly 1`] = `
+<PageTransition>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+    >
+      <html
+        lang="en"
+      />
+      <title>
+        Blog | 
+        Lipstick, Wine, and Heels
+      </title>
+      <meta
+        content="Lipstick, Wine, and Heels is a lifestyle blog dedicated to chic living and nerdy topics. I am a woman in tech who appreciates fashion, fine food and drink, crafty hobbies, fitness, and cats."
+        name="description"
+      />
+    </HelmetWrapper>
+    <div
+      className="heroContainer"
+    >
+      <div
+        className="hero"
+      >
+        <h1>
+          Blog
+        </h1>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <ul
+        className="article-list"
+      >
+        <li
+          key="this-is-a-sample-blog-post"
+        >
+          <Component
+            article={
+              Object {
+                "date": "August 30, 2018",
+                "slug": "this-is-a-sample-blog-post",
+                "title": "This is a sample blog post",
+              }
+            }
+          />
+        </li>
+        <li
+          key="hello-world"
+        >
+          <Component
+            article={
+              Object {
+                "date": "August 28, 2018",
+                "slug": "hello-world",
+                "title": "Hello World!",
+              }
+            }
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</PageTransition>
+`;

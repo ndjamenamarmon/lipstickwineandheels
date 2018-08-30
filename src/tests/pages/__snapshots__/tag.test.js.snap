@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render tag page correctly 1`] = `
+<PageTransition>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+      }
+    }
+  >
+    <HelmetWrapper
+      defer={true}
+      encodeSpecialCharacters={true}
+    >
+      <title>
+        Topics | 
+        Lipstick, Wine, and Heels
+      </title>
+      <html
+        lang="en"
+      />
+    </HelmetWrapper>
+    <div
+      className="heroContainer"
+    >
+      <div
+        className="hero"
+      >
+        <h1>
+          Topics
+        </h1>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <ul
+        className="topic-list"
+      >
+        <li
+          key="tech"
+        >
+          <div
+            className="imageContainer"
+          />
+          <div
+            className="contentContainer"
+          >
+            <h2
+              className="previewTitle"
+            >
+              <GatsbyLink
+                to="/tag/tech"
+              >
+                Tech
+              </GatsbyLink>
+            </h2>
+          </div>
+        </li>
+        <li
+          key="travel"
+        >
+          <div
+            className="imageContainer"
+          />
+          <div
+            className="contentContainer"
+          >
+            <h2
+              className="previewTitle"
+            >
+              <GatsbyLink
+                to="/tag/travel"
+              >
+                Travel
+              </GatsbyLink>
+            </h2>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</PageTransition>
+`;
