@@ -62,12 +62,18 @@ a:hover {
 }
 
 pre {
-  background: #333;
-  color: #eee;
+  background: #eee;
+  color: #373f49;
+  border: 1px solid #373f49;
   padding: 10px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.75em;
+  opacity: 0.9;
 }
 pre > code {
-  color: #eee;
+  color: #373f49;
 }
 code {
   color: #0064ff;
