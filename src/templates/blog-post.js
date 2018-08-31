@@ -158,7 +158,7 @@ export const pageQuery = graphql`
             }
           }
           postImage {
-            sizes(maxWidth: 200, maxHeight: 200, resizingBehavior: CROP) {
+            sizes(maxWidth: 200, maxHeight: 200, resizingBehavior: FILL) {
               ...GatsbyContentfulSizes
             }
             title
