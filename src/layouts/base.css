@@ -65,6 +65,9 @@ pre {
   background: #333;
   color: #eee;
   padding: 10px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 pre > code {
   color: #eee;
