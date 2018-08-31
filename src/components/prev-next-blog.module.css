@@ -1,0 +1,21 @@
+.prevNext__container {
+  margin: 20px 0 40px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.prevNext__container a {
+  display: block;
+  height: 100%;
+}
+
+.prevNext__itemPrev {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.prevNext__itemNext {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: right;
+}
