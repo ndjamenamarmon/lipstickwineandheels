@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import readingTime from 'reading-time'
 import { DiscussionEmbed } from 'disqus-react'
+import PrevNextBlog from '../components/prev-next-blog'
 
 import styles from './blog-post.module.css'
 import PageTransition from 'gatsby-plugin-page-transitions'
@@ -12,6 +13,7 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlog')
+    const posts = get(this.props, 'data.allContentfulBlog.edges')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     // console.log(post)
     const disqusShortname = 'webdevabq'
@@ -19,6 +21,31 @@ class BlogPostTemplate extends React.Component {
       identifier: post.slug,
       title: post.title,
     }
+
+    let prevPost, nextPost, currentPostIndex
+
+    // node = node.node ? node.node : node
+    console.log(posts)
+
+    for (let i = 0; i < posts.length; i++) {
+      // console.log(i)
+      // console.log(posts[i])
+      if (
+        (posts[i].node && posts[i].node.slug === post.slug) ||
+        posts[i].slug === post.slug
+      ) {
+        currentPostIndex = i
+      }
+    }
+
+    let prevPostIndex = currentPostIndex - 1
+    let nextPostIndex = currentPostIndex + 1
+
+    prevPost = posts[prevPostIndex]
+    nextPost = posts[nextPostIndex]
+
+    console.log('prevPost', prevPost)
+    console.log('nextPost', nextPost)
 
     console.log(post)
 
@@ -67,10 +94,16 @@ class BlogPostTemplate extends React.Component {
             />
           </div>
 
+          <PrevNextBlog
+            prevPost={prevPost && prevPost.node ? prevPost.node : prevPost}
+            nextPost={nextPost && nextPost.node ? nextPost.node : nextPost}
+          />
+
           <div className={styles.commentsContainer}>
             <h2>Share</h2>
             <p>Think others might enjoy this post? Share it!</p>
             <div className="sharethis-inline-share-buttons" />
+
             <h2>Comments</h2>
             <p>I'd love to hear from you, let me know your thoughts!</p>
             <DiscussionEmbed
@@ -109,6 +142,35 @@ export const pageQuery = graphql`
         slug
       }
     }
+    allContentfulBlog(sort: { fields: [date], order: ASC }) {
+      edges {
+        node {
+          title
+          slug
+          tags {
+            title
+            slug
+          }
+          date(formatString: "MMMM D, YYYY")
+          postContent {
+            childMarkdownRemark {
+              html
+            }
+          }
+          postImage {
+            sizes(maxWidth: 200, maxHeight: 200, resizingBehavior: FILL) {
+              ...GatsbyContentfulSizes
+            }
+            title
+          }
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title
@@ -116,22 +178,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// export const pageQuery = graphql`
-//   query BlogPostBySlug($slug: String!) {
-//     contentfulBlogPost(slug: { eq: $slug }) {
-//       title
-//       date(formatString: "MMMM Do, YYYY")
-//       heroImage {
-//         sizes(maxWidth: 1180, background: "rgb:000000") {
-//           ...GatsbyContentfulSizes_tracedSVG
-//         }
-//       }
-//       body {
-//         childMarkdownRemark {
-//           html
-//         }
-//       }
-//     }
-//   }
-// `

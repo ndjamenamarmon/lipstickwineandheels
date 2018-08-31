@@ -82,6 +82,25 @@ exports[`should render blog post template correctly 1`] = `
         }
       />
     </div>
+    <Component
+      nextPost={
+        Object {
+          "date": "August 28, 2018",
+          "slug": "hello-world",
+          "tags": Array [
+            Object {
+              "slug": "tech",
+              "title": "Tech",
+            },
+            Object {
+              "slug": "travel",
+              "title": "Travel",
+            },
+          ],
+          "title": "Hello World!",
+        }
+      }
+    />
     <div
       className="commentsContainer"
     >

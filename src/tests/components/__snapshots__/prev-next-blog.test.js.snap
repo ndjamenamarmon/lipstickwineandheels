@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render article preview component correctly 1`] = `
+<ul
+  className="prevNext__container"
+>
+  <li
+    className="prevNext__itemPrev"
+  >
+    <GatsbyLink
+      className="button button-secondary prevNext__link"
+      to="/blog/this-is-a-sample-blog-post"
+    >
+      <div
+        className="prevNext__contentContainer"
+      >
+        <span
+          className="prevNext__heading"
+        >
+          Previous
+        </span>
+        <h2
+          className="prevNext__title"
+        >
+          This is a sample blog post
+        </h2>
+        <p
+          className="prevNext__date"
+        >
+          August 30, 2018
+        </p>
+      </div>
+      <div
+        className="prevNext__imageContainer"
+      />
+    </GatsbyLink>
+  </li>
+  <li
+    className="prevNext__itemNext"
+  >
+    <GatsbyLink
+      className="button button-secondary prevNext__link"
+      to="/blog/hello-world"
+    >
+      <div
+        className="prevNext__imageContainer"
+      />
+      <div
+        className="prevNext__contentContainer"
+      >
+        <span
+          className="prevNext__heading"
+        >
+          Next
+        </span>
+        <h2
+          className="prevNext__title"
+        >
+          Hello World!
+        </h2>
+        <p
+          className="prevNext__date"
+        >
+          August 28, 2018
+        </p>
+      </div>
+    </GatsbyLink>
+  </li>
+</ul>
+`;
