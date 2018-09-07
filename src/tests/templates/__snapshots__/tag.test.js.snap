@@ -49,7 +49,7 @@ exports[`should render tag template correctly 1`] = `
         <li
           key="this-is-a-sample-blog-post"
         >
-          <Component
+          <ArticlePreview
             article={
               Object {
                 "date": "August 30, 2018",
@@ -63,12 +63,19 @@ exports[`should render tag template correctly 1`] = `
                 "title": "This is a sample blog post",
               }
             }
+            postStyles={
+              Object {
+                "gridTemplateColumns": "100%",
+                "margin": "0 auto",
+                "maxWidth": "660px",
+              }
+            }
           />
         </li>
         <li
           key="hello-world"
         >
-          <Component
+          <ArticlePreview
             article={
               Object {
                 "date": "August 28, 2018",
@@ -84,6 +91,13 @@ exports[`should render tag template correctly 1`] = `
                   },
                 ],
                 "title": "Hello World!",
+              }
+            }
+            postStyles={
+              Object {
+                "gridTemplateColumns": "100%",
+                "margin": "0 auto",
+                "maxWidth": "660px",
               }
             }
           />

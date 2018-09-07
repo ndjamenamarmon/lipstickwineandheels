@@ -34,9 +34,17 @@ class RootIndex extends React.Component {
                 node = node.node ? node.node : node
                 // console.log(new Date() >= new Date(node.date))
                 if (new Date() >= new Date(node.date)) {
+                  let postStyles = {}
+                  if (!node.postImage) {
+                    postStyles = {
+                      gridTemplateColumns: '100%',
+                      maxWidth: '660px',
+                      margin: '0 auto',
+                    }
+                  }
                   return (
                     <li key={node.slug}>
-                      <ArticlePreview article={node} />
+                      <ArticlePreview article={node} postStyles={postStyles} />
                     </li>
                   )
                 }
