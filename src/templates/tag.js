@@ -40,7 +40,11 @@ class TagTemplate extends React.Component {
                       show = true
                     }
                   })
-                  if (show === true && new Date() >= new Date(node.date)) {
+                  if (
+                    show === true &&
+                    new Date() >= new Date(node.date) &&
+                    count < 6
+                  ) {
                     count++
                     return (
                       <li key={node.slug}>
