@@ -13,6 +13,7 @@
     "enzyme-to-json": "^3.3.4",
     "gatsby-image": "^1.0.55",
     "gatsby-link": "^1.6.46",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-page-transitions": "^1.0.7",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -43,7 +44,10 @@
     "yargs-parser": "^10.1.0"
   },
   "homepage": "https://github.com/ndjamenamarmon/lipstickwineandheels#readme",
-  "keywords": ["gatsby", "contentful"],
+  "keywords": [
+    "gatsby",
+    "contentful"
+  ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -54,18 +58,14 @@
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "jest --config=jest.config.json",
-    "test-coverage":
-      "jest --config=jest.config.json --coverage --collectCoverageFrom=src/**/*.js",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
+    "test-coverage": "jest --config=jest.config.json --coverage --collectCoverageFrom=src/**/*.js",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md' 'bin/*.js'",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi":
-      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "heroku-postbuild": "gatsby build",
-    "cleanup-repository":
-      "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf "
+    "cleanup-repository": "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf "
   }
 }
