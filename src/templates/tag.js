@@ -46,9 +46,20 @@ class TagTemplate extends React.Component {
                     count < 6
                   ) {
                     count++
+                    let postStyles = {}
+                    if (!node.postImage) {
+                      postStyles = {
+                        gridTemplateColumns: '100%',
+                        maxWidth: '660px',
+                        margin: '0 auto',
+                      }
+                    }
                     return (
                       <li key={node.slug}>
-                        <ArticlePreview article={node} />
+                        <ArticlePreview
+                          article={node}
+                          postStyles={postStyles}
+                        />
                       </li>
                     )
                   }

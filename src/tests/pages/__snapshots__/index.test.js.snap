@@ -52,6 +52,13 @@ exports[`should render index page correctly 1`] = `
                 "title": "This is a sample blog post",
               }
             }
+            postStyles={
+              Object {
+                "gridTemplateColumns": "100%",
+                "margin": "0 auto",
+                "maxWidth": "660px",
+              }
+            }
           />
         </li>
         <li
@@ -73,6 +80,13 @@ exports[`should render index page correctly 1`] = `
                   },
                 ],
                 "title": "Hello World!",
+              }
+            }
+            postStyles={
+              Object {
+                "gridTemplateColumns": "100%",
+                "margin": "0 auto",
+                "maxWidth": "660px",
               }
             }
           />

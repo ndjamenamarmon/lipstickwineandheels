@@ -5,13 +5,13 @@ import readingTime from 'reading-time'
 
 import styles from './article-preview.module.css'
 
-export default ({ article }) => (
-  <div className={styles.preview}>
-    <div className={styles.imageContainer}>
-      {article.postImage && (
+export default ({ article, postStyles }) => (
+  <div className={styles.preview} style={postStyles}>
+    {article.postImage && (
+      <div className={styles.imageContainer}>
         <Img alt={article.postImage.title} sizes={article.postImage.sizes} />
-      )}
-    </div>
+      </div>
+    )}
     <div className={styles.contentContainer}>
       <h2 className={styles.previewTitle}>
         <Link to={`/blog/${article.slug}`}>{article.title}</Link>
