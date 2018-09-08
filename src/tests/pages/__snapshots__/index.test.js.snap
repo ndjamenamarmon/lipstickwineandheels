@@ -38,7 +38,7 @@ exports[`should render index page correctly 1`] = `
         <li
           key="this-is-a-sample-blog-post"
         >
-          <ArticlePreview
+          <Component
             article={
               Object {
                 "date": "August 30, 2018",
@@ -64,7 +64,7 @@ exports[`should render index page correctly 1`] = `
         <li
           key="hello-world"
         >
-          <ArticlePreview
+          <Component
             article={
               Object {
                 "date": "August 28, 2018",
