@@ -123,7 +123,7 @@ export const pageQuery = graphql`
           title
           slug
           image {
-            sizes(maxWidth: 300, maxHeight: 300, resizingBehavior: SCALE) {
+            sizes(maxWidth: 300, maxHeight: 300, resizingBehavior: FILL) {
               ...GatsbyContentfulSizes
             }
             title
