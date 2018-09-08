@@ -28,27 +28,28 @@ export default ({ prevPost, nextPost }) => (
         </Link>
       </li>
     )}
-    {nextPost && (
-      <li className={styles.prevNext__itemNext}>
-        <Link
-          to={`/blog/${nextPost.slug}`}
-          className={`button button-secondary ${styles.prevNext__link}`}
-        >
-          <div className={styles.prevNext__imageContainer}>
-            {nextPost.postImage && (
-              <Img
-                alt={nextPost.postImage.title}
-                sizes={nextPost.postImage.sizes}
-              />
-            )}
-          </div>
-          <div className={styles.prevNext__contentContainer}>
-            <span className={styles.prevNext__heading}>Next</span>
-            <h2 className={styles.prevNext__title}>{nextPost.title}</h2>
-            <p className={styles.prevNext__date}>{nextPost.date}</p>
-          </div>
-        </Link>
-      </li>
-    )}
+    {nextPost &&
+      new Date() >= new Date(nextPost.date) && (
+        <li className={styles.prevNext__itemNext}>
+          <Link
+            to={`/blog/${nextPost.slug}`}
+            className={`button button-secondary ${styles.prevNext__link}`}
+          >
+            <div className={styles.prevNext__imageContainer}>
+              {nextPost.postImage && (
+                <Img
+                  alt={nextPost.postImage.title}
+                  sizes={nextPost.postImage.sizes}
+                />
+              )}
+            </div>
+            <div className={styles.prevNext__contentContainer}>
+              <span className={styles.prevNext__heading}>Next</span>
+              <h2 className={styles.prevNext__title}>{nextPost.title}</h2>
+              <p className={styles.prevNext__date}>{nextPost.date}</p>
+            </div>
+          </Link>
+        </li>
+      )}
   </ul>
 )
