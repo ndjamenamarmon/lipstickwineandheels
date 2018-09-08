@@ -11,7 +11,7 @@ class TagIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const tags = get(this, 'props.data.allContentfulTag.edges')
-    console.log(tags)
+    // console.log(tags)
 
     return (
       <PageTransition>

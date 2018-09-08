@@ -14,6 +14,7 @@ class BlogIndex extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const posts = get(this, 'props.data.allContentfulBlog.edges')
+    let postCount = 0
 
     return (
       <PageTransition>
@@ -32,7 +33,8 @@ class BlogIndex extends React.Component {
             <ul className="article-list">
               {posts.map(node => {
                 node = node.node ? node.node : node
-                if (new Date() >= new Date(node.date)) {
+                if (new Date() >= new Date(node.date) && postCount < 6) {
+                  postCount++
                   let postStyles = {}
                   if (!node.postImage) {
                     postStyles = {

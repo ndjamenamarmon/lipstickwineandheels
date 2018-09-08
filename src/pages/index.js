@@ -16,6 +16,7 @@ class RootIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlog.edges')
     // const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const tags = get(this, 'props.data.allContentfulTag.edges')
+    let postCount = 0
 
     // console.log(posts)
 
@@ -33,7 +34,8 @@ class RootIndex extends React.Component {
               {posts.map(node => {
                 node = node.node ? node.node : node
                 // console.log(new Date() >= new Date(node.date))
-                if (new Date() >= new Date(node.date)) {
+                if (new Date() >= new Date(node.date) && postCount < 6) {
+                  postCount++
                   let postStyles = {}
                   if (!node.postImage) {
                     postStyles = {
