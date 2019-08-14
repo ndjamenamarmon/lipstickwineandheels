@@ -33,7 +33,7 @@ class BlogIndex extends React.Component {
             <ul className="article-list">
               {posts.map(node => {
                 node = node.node ? node.node : node
-                if (new Date() >= new Date(node.date) && postCount < 6) {
+                if (new Date() >= new Date(node.date)) {
                   postCount++
                   let postStyles = {}
                   if (!node.postImage) {
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
             }
           }
           postImage {
-            sizes(maxWidth: 1920, maxHeight: 1200, resizingBehavior: CROP) {
+            sizes(maxWidth: 960, maxHeight: 600, resizingBehavior: CROP) {
               ...GatsbyContentfulSizes
             }
             title
