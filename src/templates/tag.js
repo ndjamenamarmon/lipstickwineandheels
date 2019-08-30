@@ -40,11 +40,7 @@ class TagTemplate extends React.Component {
                       show = true
                     }
                   })
-                  if (
-                    show === true &&
-                    new Date() >= new Date(node.date) &&
-                    count < 6
-                  ) {
+                  if (show === true && new Date() >= new Date(node.date)) {
                     count++
                     let postStyles = {}
                     if (!node.postImage) {
@@ -114,7 +110,7 @@ export const pageQuery = graphql`
             }
           }
           postImage {
-            sizes(maxWidth: 1920, maxHeight: 1200, resizingBehavior: SCALE) {
+            sizes(maxWidth: 960, maxHeight: 600, resizingBehavior: CROP) {
               ...GatsbyContentfulSizes
             }
           }
