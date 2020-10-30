@@ -15,8 +15,24 @@ class BlogIndex extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const posts = get(this, 'props.data.allContentfulBlog.edges')
-    console.log(get(this, props.data.allNotionPageBlog.edges))
+    const notionPosts = get(this, 'props.data.allNotionPageBlog.edges')
     let postCount = 0
+    const newPosts = posts.concat(notionPosts)
+    const formattedPosts = newPosts.map(p => {
+      return {
+        date: p.node.date || p.node.createdAt,
+        description: p.node.description || p.node.excerpt,
+        postContent: p.node.postContent || p.node.excerpt,
+        postImage: p.node.postImage || null,
+        slug:
+          p.node.slug ||
+          p.node.title.replace(/ /g, '-') +
+            '-' +
+            p.node.pageId.replace(/-/g, ''),
+        tags: p.node.tags,
+        title: p.node.title,
+      }
+    })
 
     return (
       <Layout>
@@ -34,7 +50,7 @@ class BlogIndex extends React.Component {
             </div>
             <div className="wrapper">
               <ul className="article-list">
-                {posts.map(node => {
+                {formattedPosts.map(node => {
                   node = node.node ? node.node : node
                   if (new Date() >= new Date(node.date)) {
                     postCount++
@@ -111,8 +127,10 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          slug
+          tags
+          pageId
           excerpt
+          createdAt
         }
       }
     }

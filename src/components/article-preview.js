@@ -9,7 +9,7 @@ export default ({ article, postStyles }) => (
   <div className={styles.preview} style={postStyles}>
     {article.postImage && (
       <div className={styles.imageContainer}>
-        <Img alt={article.postImage.title} sizes={article.postImage.sizes} />
+        <Img alt={article.postImage.title} fluid={article.postImage.sizes} />
       </div>
     )}
     <div className={styles.contentContainer}>
@@ -27,7 +27,8 @@ export default ({ article, postStyles }) => (
       )}
       <small>
         {article.date} <span className={styles.bullet}>&bull;</span>
-        {readingTime(article.postContent.childMarkdownRemark.html).text}
+        {article.postContent &&
+          readingTime(article.postContent.childMarkdownRemark.html).text}
       </small>
       {article.description && (
         <div
@@ -38,7 +39,14 @@ export default ({ article, postStyles }) => (
         />
       )}
       <p className={styles.articleReadMore}>
-        <Link to={`/blog/${article.slug}`} className="button button-secondary">
+        <Link
+          to={
+            article.postContent
+              ? `/blog/${article.slug}`
+              : `https://notion.so/${article.slug}`
+          }
+          className="button button-secondary"
+        >
           Continue Reading
         </Link>
       </p>
