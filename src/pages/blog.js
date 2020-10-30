@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import ArticlePreview from '../components/article-preview'
 import PageTransition from 'gatsby-plugin-page-transitions'
+import Layout from '../components/layout'
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,43 +19,48 @@ class BlogIndex extends React.Component {
     let postCount = 0
 
     return (
-      <PageTransition>
-        <div style={{ background: '#fff' }}>
-          <Helmet>
-            <html lang="en" />
-            <title>Blog | {siteTitle}</title>
-            <meta name="description" content={siteDescription} />
-          </Helmet>
-          <div className={styles.heroContainer}>
-            <div className={styles.hero}>
-              <h1>Blog</h1>
+      <Layout>
+        <PageTransition>
+          <div style={{ background: '#fff' }}>
+            <Helmet>
+              <html lang="en" />
+              <title>Blog | {siteTitle}</title>
+              <meta name="description" content={siteDescription} />
+            </Helmet>
+            <div className={styles.heroContainer}>
+              <div className={styles.hero}>
+                <h1>Blog</h1>
+              </div>
+            </div>
+            <div className="wrapper">
+              <ul className="article-list">
+                {posts.map(node => {
+                  node = node.node ? node.node : node
+                  if (new Date() >= new Date(node.date)) {
+                    postCount++
+                    let postStyles = {}
+                    if (!node.postImage) {
+                      postStyles = {
+                        gridTemplateColumns: '100%',
+                        maxWidth: '660px',
+                        margin: '0 auto',
+                      }
+                    }
+                    return (
+                      <li key={node.slug}>
+                        <ArticlePreview
+                          article={node}
+                          postStyles={postStyles}
+                        />
+                      </li>
+                    )
+                  }
+                })}
+              </ul>
             </div>
           </div>
-          <div className="wrapper">
-            <ul className="article-list">
-              {posts.map(node => {
-                node = node.node ? node.node : node
-                if (new Date() >= new Date(node.date)) {
-                  postCount++
-                  let postStyles = {}
-                  if (!node.postImage) {
-                    postStyles = {
-                      gridTemplateColumns: '100%',
-                      maxWidth: '660px',
-                      margin: '0 auto',
-                    }
-                  }
-                  return (
-                    <li key={node.slug}>
-                      <ArticlePreview article={node} postStyles={postStyles} />
-                    </li>
-                  )
-                }
-              })}
-            </ul>
-          </div>
-        </div>
-      </PageTransition>
+        </PageTransition>
+      </Layout>
     )
   }
 }

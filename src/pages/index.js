@@ -5,6 +5,7 @@ import ArticlePreview from '../components/article-preview'
 import TopicPreview from '../components/topic-preview'
 import { SocialIcon } from 'react-social-icons'
 import PageTransition from 'gatsby-plugin-page-transitions'
+import Layout from '../components/layout'
 
 class RootIndex extends React.Component {
   render() {
@@ -21,18 +22,18 @@ class RootIndex extends React.Component {
     // console.log(posts)
 
     return (
-      <PageTransition>
-        <div style={{ background: '#fff' }}>
-          <Helmet>
-            <html lang="en" />
-            <title>{siteTitle}</title>
-            <meta name="description" content={siteDescription} />
-          </Helmet>
-          <div className="wrapper">
-            <h1 className="section-headline">Recent Articles</h1>
-            <ul className="article-list">
-              {posts &&
-                posts.map(node => {
+      <Layout>
+        <PageTransition>
+          <div style={{ background: '#fff' }}>
+            <Helmet>
+              <html lang="en" />
+              <title>{siteTitle}</title>
+              <meta name="description" content={siteDescription} />
+            </Helmet>
+            <div className="wrapper">
+              <h1 className="section-headline">Recent Articles</h1>
+              <ul className="article-list">
+                {posts.map(node => {
                   node = node.node ? node.node : node
                   // console.log(new Date() >= new Date(node.date))
                   if (new Date() >= new Date(node.date) && postCount < 6) {
@@ -55,12 +56,11 @@ class RootIndex extends React.Component {
                     )
                   }
                 })}
-            </ul>
+              </ul>
 
-            <h2 className="section-headline">Topics</h2>
-            <ul className="topic-list">
-              {tags &&
-                tags.map(node => {
+              <h2 className="section-headline">Topics</h2>
+              <ul className="topic-list">
+                {tags.map(node => {
                   node = node.node ? node.node : node
                   return (
                     <li key={node.slug}>
@@ -68,17 +68,18 @@ class RootIndex extends React.Component {
                     </li>
                   )
                 })}
-            </ul>
+              </ul>
 
-            <h2 className="section-headline">Follow Me</h2>
-            <div className="social-icon-container">
-              <SocialIcon url="https://twitter.com/JamenaMcInteer" />
-              <SocialIcon url="https://www.instagram.com/jamena.mcinteer/" />
-              <SocialIcon url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/" />
+              <h2 className="section-headline">Follow Me</h2>
+              <div className="social-icon-container">
+                <SocialIcon url="https://twitter.com/JamenaMcInteer" />
+                <SocialIcon url="https://www.instagram.com/jamena.mcinteer/" />
+                <SocialIcon url="https://www.linkedin.com/in/jamena-mcinteer-5511aa45/" />
+              </div>
             </div>
           </div>
-        </div>
-      </PageTransition>
+        </PageTransition>
+      </Layout>
     )
   }
 }
