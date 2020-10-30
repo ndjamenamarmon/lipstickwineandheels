@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import styles from './tag.module.css'
 import ArticlePreview from '../components/article-preview'
 import PageTransition from 'gatsby-plugin-page-transitions'
+import Layout from '../components/layout'
 
 class TagTemplate extends React.Component {
   render() {
@@ -19,57 +20,61 @@ class TagTemplate extends React.Component {
     let count = 0
 
     return (
-      <PageTransition>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={`${tag.title} | ${siteTitle}`}>
-            <html lang="en" />
-            <meta name="description" content={siteDescription} />
-          </Helmet>
-          <div className={styles.heroContainer}>
-            <div className={styles.hero} style={imageStyles} />
-          </div>
-          <div className={styles.tagContainer}>
-            <h1 className="section-headline">Recent articles in {tag.title}</h1>
-            <ul className="article-list">
-              {posts.map(node => {
-                {
-                  node = node.node ? node.node : node
-                  let show = false
-                  node.tags.map(tagItem => {
-                    if (tagItem.slug === tag.slug) {
-                      show = true
-                    }
-                  })
-                  if (show === true && new Date() >= new Date(node.date)) {
-                    count++
-                    let postStyles = {}
-                    if (!node.postImage) {
-                      postStyles = {
-                        gridTemplateColumns: '100%',
-                        maxWidth: '660px',
-                        margin: '0 auto',
+      <Layout>
+        <PageTransition>
+          <div style={{ background: '#fff' }}>
+            <Helmet title={`${tag.title} | ${siteTitle}`}>
+              <html lang="en" />
+              <meta name="description" content={siteDescription} />
+            </Helmet>
+            <div className={styles.heroContainer}>
+              <div className={styles.hero} style={imageStyles} />
+            </div>
+            <div className={styles.tagContainer}>
+              <h1 className="section-headline">
+                Recent articles in {tag.title}
+              </h1>
+              <ul className="article-list">
+                {posts.map(node => {
+                  {
+                    node = node.node ? node.node : node
+                    let show = false
+                    node.tags.map(tagItem => {
+                      if (tagItem.slug === tag.slug) {
+                        show = true
                       }
+                    })
+                    if (show === true && new Date() >= new Date(node.date)) {
+                      count++
+                      let postStyles = {}
+                      if (!node.postImage) {
+                        postStyles = {
+                          gridTemplateColumns: '100%',
+                          maxWidth: '660px',
+                          margin: '0 auto',
+                        }
+                      }
+                      return (
+                        <li key={node.slug}>
+                          <ArticlePreview
+                            article={node}
+                            postStyles={postStyles}
+                          />
+                        </li>
+                      )
                     }
-                    return (
-                      <li key={node.slug}>
-                        <ArticlePreview
-                          article={node}
-                          postStyles={postStyles}
-                        />
-                      </li>
-                    )
                   }
-                }
-              })}
-            </ul>
-            {count === 0 && (
-              <p className={styles.noPosts}>
-                There are no blog posts in this topic yet.
-              </p>
-            )}
+                })}
+              </ul>
+              {count === 0 && (
+                <p className={styles.noPosts}>
+                  There are no blog posts in this topic yet.
+                </p>
+              )}
+            </div>
           </div>
-        </div>
-      </PageTransition>
+        </PageTransition>
+      </Layout>
     )
   }
 }

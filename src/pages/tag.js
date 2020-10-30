@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import styles from './tag.module.css'
 // import ArticlePreview from '../components/article-preview'
 import PageTransition from 'gatsby-plugin-page-transitions'
+import Layout from '../components/layout'
 
 class TagIndex extends React.Component {
   render() {
@@ -14,40 +15,45 @@ class TagIndex extends React.Component {
     // console.log(tags)
 
     return (
-      <PageTransition>
-        <div style={{ background: '#fff' }}>
-          <Helmet>
-            <title>Topics | {siteTitle}</title>
-            <html lang="en" />
-          </Helmet>
-          <div className={styles.heroContainer}>
-            <div className={styles.hero}>
-              <h1>Topics</h1>
+      <Layout>
+        <PageTransition>
+          <div style={{ background: '#fff' }}>
+            <Helmet>
+              <title>Topics | {siteTitle}</title>
+              <html lang="en" />
+            </Helmet>
+            <div className={styles.heroContainer}>
+              <div className={styles.hero}>
+                <h1>Topics</h1>
+              </div>
+            </div>
+            <div className="wrapper">
+              <ul className="topic-list">
+                {tags.map(node => {
+                  node = node.node ? node.node : node
+                  return (
+                    <li key={node.slug}>
+                      <div className={styles.imageContainer}>
+                        {node.image && (
+                          <Img
+                            alt={node.image.title}
+                            sizes={node.image.sizes}
+                          />
+                        )}
+                      </div>
+                      <div className={styles.contentContainer}>
+                        <h2 className={styles.previewTitle}>
+                          <Link to={`/tag/${node.slug}`}>{node.title}</Link>
+                        </h2>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
-          <div className="wrapper">
-            <ul className="topic-list">
-              {tags.map(node => {
-                node = node.node ? node.node : node
-                return (
-                  <li key={node.slug}>
-                    <div className={styles.imageContainer}>
-                      {node.image && (
-                        <Img alt={node.image.title} sizes={node.image.sizes} />
-                      )}
-                    </div>
-                    <div className={styles.contentContainer}>
-                      <h2 className={styles.previewTitle}>
-                        <Link to={`/tag/${node.slug}`}>{node.title}</Link>
-                      </h2>
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
-      </PageTransition>
+        </PageTransition>
+      </Layout>
     )
   }
 }
