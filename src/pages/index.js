@@ -31,38 +31,43 @@ class RootIndex extends React.Component {
           <div className="wrapper">
             <h1 className="section-headline">Recent Articles</h1>
             <ul className="article-list">
-              {posts.map(node => {
-                node = node.node ? node.node : node
-                // console.log(new Date() >= new Date(node.date))
-                if (new Date() >= new Date(node.date) && postCount < 6) {
-                  postCount++
-                  let postStyles = {}
-                  if (!node.postImage) {
-                    postStyles = {
-                      gridTemplateColumns: '100%',
-                      maxWidth: '660px',
-                      margin: '0 auto',
+              {posts &&
+                posts.map(node => {
+                  node = node.node ? node.node : node
+                  // console.log(new Date() >= new Date(node.date))
+                  if (new Date() >= new Date(node.date) && postCount < 6) {
+                    postCount++
+                    let postStyles = {}
+                    if (!node.postImage) {
+                      postStyles = {
+                        gridTemplateColumns: '100%',
+                        maxWidth: '660px',
+                        margin: '0 auto',
+                      }
                     }
+                    return (
+                      <li key={node.slug}>
+                        <ArticlePreview
+                          article={node}
+                          postStyles={postStyles}
+                        />
+                      </li>
+                    )
                   }
-                  return (
-                    <li key={node.slug}>
-                      <ArticlePreview article={node} postStyles={postStyles} />
-                    </li>
-                  )
-                }
-              })}
+                })}
             </ul>
 
             <h2 className="section-headline">Topics</h2>
             <ul className="topic-list">
-              {tags.map(node => {
-                node = node.node ? node.node : node
-                return (
-                  <li key={node.slug}>
-                    <TopicPreview topic={node} />
-                  </li>
-                )
-              })}
+              {tags &&
+                tags.map(node => {
+                  node = node.node ? node.node : node
+                  return (
+                    <li key={node.slug}>
+                      <TopicPreview topic={node} />
+                    </li>
+                  )
+                })}
             </ul>
 
             <h2 className="section-headline">Follow Me</h2>

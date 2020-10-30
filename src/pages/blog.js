@@ -14,6 +14,7 @@ class BlogIndex extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const posts = get(this, 'props.data.allContentfulBlog.edges')
+    console.log(get(this, props.data.allNotionPageBlog.edges))
     let postCount = 0
 
     return (
@@ -94,6 +95,18 @@ export const pageQuery = graphql`
               html
             }
           }
+        }
+      }
+    }
+    allNotionPageBlog(
+      filter: { isDraft: { eq: false } }
+      sort: { fields: [indexPage], order: DESC }
+    ) {
+      edges {
+        node {
+          title
+          slug
+          excerpt
         }
       }
     }

@@ -60,5 +60,13 @@ module.exports = {
         exclude: ['/preview/**'],
       },
     },
+    {
+      resolve: `gatsby-source-notionso`,
+      options: {
+        rootPageUrl:
+          'https://www.notion.so/Blog-d9df89eed13a4f0793caf746bd783463',
+        name: 'Blog',
+      },
+    },
   ],
 }
